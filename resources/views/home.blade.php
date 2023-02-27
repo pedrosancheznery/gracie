@@ -20,15 +20,15 @@
 
 <script type="text/javascript">
 
-const api_url ="https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
+const api_url = 'https://corsproxy.io/?' + encodeURIComponent('https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en');
 
 async function getapi(url)
 {
   const response = await fetch(url);
   var data = await response.json();
-  console.log(data);
-  document.getElementById("content").innerHHTML(data.quoteText)
-  document.getElementById("foot").innerHHTML(data.quoteAuthor)
+  // console.log(data);
+  document.getElementById("content").innerHTML = data.quoteText;
+  document.getElementById("foot").innerHTML = data.quoteAuthor;
 }
 
 getapi(api_url);

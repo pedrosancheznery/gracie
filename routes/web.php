@@ -37,15 +37,12 @@ Route::get('/master', function () {
     return view('master');
 });
 
-Route::post('/generate-docx', 'DocxController@generateDocx')->name('genx');
 Route::post('/generate-png', 'PngController@addData')->name('gen');
-
-// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/login', 'LoginController@authenticate')->name('login');
-// Route::post('/logout', 'LoginController@authenticate')->name('logout');
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
