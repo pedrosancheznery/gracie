@@ -24,10 +24,18 @@
                             <div class="column">
                                 <label for="name">User Name</label>
                                 <input class="input is-primary" type="text" placeholder="User Name" name="name">
+                                @error('name')
+                                    <strong>{{ $message }}</strong>
+                                @enderror
                             </div>
                             <div class="column">
                                 <label for="password">Password</label>
                                 <input class="input is-primary" type="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="colmun">
+                                @error('password')
+                                    <p class="has-text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="column">
                                 <button class="button is-primary is-fullwidth" type="submit">Login</button>

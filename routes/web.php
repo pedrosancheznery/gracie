@@ -23,19 +23,19 @@ Route::get('/login', function () {
 
 Route::get('/welcome', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/women', function () {
     return view('women');
-});
+})->middleware('auth');
 
 Route::get('/bullyproof', function () {
     return view('bullyproof');
-});
+})->middleware('auth');
 
 Route::get('/master', function () {
     return view('master');
-});
+})->middleware('auth');
 
 Route::post('/generate-png', 'PngController@addData')->name('gen');
 
